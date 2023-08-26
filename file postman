@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "3fbcfefa-f93c-4206-ba3b-19f85ec6e073",
+		"name": "Bài tập sequelize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26735517",
+		"_collection_link": "https://blue-capsule-80976.postman.co/workspace/Api-qu%E1%BA%A3n-l%C3%BD-sinh-vi%C3%AAn-~3c4b8140-81a7-4aa5-a5d5-44ffa398d6cc/collection/26735517-3fbcfefa-f93c-4206-ba3b-19f85ec6e073?action=share&source=collection_link&creator=26735517"
+	},
+	"item": [
+		{
+			"name": "Like",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVja0VtYWlsIjp7InVzZXJfaWQiOjMyLCJmdWxsX25hbWUiOiJmZGZkZmRzZmRzIiwiZW1haWwiOiJmZGZkZmRAZ21haWwuY29tIiwicGFzc193b3JkIjoiJDJiJDEwJDdhTW5rS3c2RGh4UEZha3NNV2NpemViM0o2a2NKdEs0VTNsWVFpV3pqd1FrR3U4M0c0ajdpIiwiZmFjZWJvb2tfYXBwX2lkIjpudWxsfSwiaWF0IjoxNjkyNzAxMzI5LCJleHAiOjE2OTI3MDE2Mjl9.l3GHtgbdcX_PAMsngrJItNWf6iJv-UdF8heWe4SGkHM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n    \"user_id\" : 3,\r\n    \"res_id\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain }}/restaurant/like",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"user_id\" : 3,\r\n     \"res_id\" : 1\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain }}/restaurant/unlike",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách like theo user và nhà hàng",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{domain }}/restaurant/2/2/get-likes-list",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"2",
+						"2",
+						"get-likes-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách like theo user ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain }}/restaurant/1/like-by-user",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"1",
+						"like-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách like theo nhà hàng ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain }}/restaurant/2/likes",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"2",
+						"likes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm đánh giá nhà hàng ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 1,\r\n    \"res_id\" : 1,\r\n    \"amount\" : 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain }}/restaurant/rate-restaurant",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"rate-restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách đánh giá nhà hàng theo nhà hàng ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain }}/restaurant/2/rate-by-res",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"2",
+						"rate-by-res"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách đánh giá nhà hàng theo user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain }}/restaurant/2/rate-by-user",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"2",
+						"rate-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách đánh giá nhà hàng theo user và nhà hàng ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain }}/restaurant/2/3/get-rating",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"2",
+						"3",
+						"get-rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 1,\r\n    \"food_id\" : 2,\r\n    \"amount\" : 5,\r\n    \"code\" : \"bananhlong\",\r\n    \"arr_sub_id\" : \"[1,2,3]\"\r\n     \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain }}/restaurant/order",
+					"host": [
+						"{{domain }}"
+					],
+					"path": [
+						"restaurant",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain ",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
